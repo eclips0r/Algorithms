@@ -1,4 +1,3 @@
-
 /**
  * Hier koennen alle Sortieralgorithmen ausprobiert und getestet werden. Dazu
  * muss zuerst ein Objekt der jeweiligen Klasse/ des jeweiligen Verfahrens
