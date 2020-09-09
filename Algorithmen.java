@@ -4,7 +4,7 @@
  * erstellt werden und danach kann auf die entsprechenden Methoden zugegriffen
  * werden <br>
  * </br>
- * Die Zahlenfoge sowie die print-Methode koennen nach Belieben angepasst und
+ * Die Zahlenfolge sowie die print-Methode koennen nach Belieben angepasst und
  * veraendert werden
  **/
 public class Algorithmen {
