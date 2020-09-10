@@ -7,6 +7,14 @@ public class RandomQuickSort extends QuickSort {
         this.array = array;
     }
 
+    /**
+     * Erwartete Laufzeit ist Theta(n*log(n)) - diese wird aus Zufallsexperimente in
+     * randomizedPartition genommen
+     * 
+     * @param A = zu sortierendes Array
+     * @param p = Anfangspunkt der Sortierung (Index)
+     * @param r = Endpunkt der Sortierung (Index)
+     **/
     public int[] randomizedQuicksort(int[] A, int p, int r) {
         if (p < r) {
             int q = randomizedPartition(A, p, r);
@@ -16,6 +24,14 @@ public class RandomQuickSort extends QuickSort {
         return A;
     }
 
+    /**
+     * Bevor hier tatsaechlich partitioniert wird, werden zwei zufaellige Zahlen
+     * innerhalb des Arrays ausgetauscht
+     * 
+     * @param A = zu sortierendes Array
+     * @param p = Anfangspunkt der Sortierung (Index)
+     * @param r = Endpunkt der Sortierung (Index)
+     **/
     public int randomizedPartition(int[] A, int p, int r) {
         // generiert eine zufaellige Zahl innerhalb der angegebenen Range (p...r)
         int i = ThreadLocalRandom.current().nextInt(p, r + 1);
@@ -24,5 +40,4 @@ public class RandomQuickSort extends QuickSort {
         A[i] = temp;
         return partition(A, p, r);
     }
-
 }
