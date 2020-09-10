@@ -12,6 +12,9 @@ public class Algorithmen {
 
         int[] numbers = { 31, 41, 59, 26, 51, 48, 909, 10, 40, 39, 22, 23, 22, };
         int[] test = { 8, 15, 3, 14, 7, 6, 121, 3 };
+        printArray(test);
+        RandomQuickSort randQuick = new RandomQuickSort(test);
+        printArray(randQuick.randomizedQuicksort(test, 0, test.length - 1));
 
         printArray(numbers);
         QuickSort quick = new QuickSort(numbers);
@@ -25,7 +28,6 @@ public class Algorithmen {
 
         InsertionSort ins = new InsertionSort(numbers);
         printArray(ins.insertionSort(numbers));
-
     }
 
     /** Printet uebergebenes Array in die Konsole **/
