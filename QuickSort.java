@@ -1,8 +1,12 @@
 public class QuickSort {
-    int[] numbers;
+    int[] array;
 
-    public QuickSort(int[] numbers) {
-        this.numbers = numbers;
+    // wird fuer RandomQuickSort benoetigt
+    public QuickSort() {
+    }
+
+    public QuickSort(int[] array) {
+        this.array = array;
     }
 
     /**
