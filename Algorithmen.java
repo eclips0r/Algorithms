@@ -14,6 +14,8 @@ public class Algorithmen {
         int[] test = { 8, 15, 3, 14, 7, 6, 121, 3 };
 
         printArray(numbers);
+        QuickSort quick = new QuickSort(numbers);
+        printArray(quick.quicksort(numbers, 0, numbers.length - 1));
 
         MinSearch min = new MinSearch(test);
         System.out.println(min.minSearch(test));
