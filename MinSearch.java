@@ -1,12 +1,12 @@
 public class MinSearch {
-    int[] numbers;
+    int[] array;
 
     /**
-     * @param numbers = int[] auf das die gewuenschten Methoden angewendet werden
-     *                sollen
+     * @param array = int[] auf das die gewuenschten Methoden angewendet werden
+     *              sollen
      **/
-    public MinSearch(int[] numbers) {
-        this.numbers = numbers;
+    public MinSearch(int[] array) {
+        this.array = array;
     }
 
     /**
@@ -28,15 +28,15 @@ public class MinSearch {
      * Beispiel auch auf S. 54 bezueglich Laufzeit<br>
      * </br>
      * 
-     * @param numbers = zu durchlaufendes Array
+     * @param array = zu durchlaufendes Array
      * @return Index der kleinsten Zahl
      * 
      * 
      **/
-    public int minSearch(int[] numbers) {
+    public int minSearch(int[] array) {
         int min = 0;
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] < numbers[min]) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[min]) {
                 min = i;
             }
         }

@@ -1,12 +1,12 @@
 public class MergeSort {
-    int[] numbers;
+    int[] array;
 
     /**
-     * @param numbers = int[] auf das die gewuenschten Methoden angewendet werden
-     *                sollen
+     * @param array = int[] auf das die gewuenschten Methoden angewendet werden
+     *              sollen
      **/
-    public MergeSort(int[] numbers) {
-        this.numbers = numbers;
+    public MergeSort(int[] array) {
+        this.array = array;
     }
 
     /**
@@ -17,20 +17,20 @@ public class MergeSort {
      * Merge-Sort besitzt Laufzeit Theta(n*log(n))<br>
      * </br>
      * 
-     * @param numbers = zu sortierendes Array
-     * @param p       = Anfangspunkt (Index) der Sortierung
-     * @param r       = Endpunkt (Index) der Sortierung
+     * @param array = zu sortierendes Array
+     * @param p     = Anfangspunkt (Index) der Sortierung
+     * @param r     = Endpunkt (Index) der Sortierung
      * 
      **/
-    public int[] mergeSort(int[] numbers, int p, int r) {
+    public int[] mergeSort(int[] array, int p, int r) {
         int q;
         if (p < r) {
             q = (int) Math.floor((p + r) / 2);
-            mergeSort(numbers, p, q);
-            mergeSort(numbers, q + 1, r);
-            merge(numbers, p, q, r);
+            mergeSort(array, p, q);
+            mergeSort(array, q + 1, r);
+            merge(array, p, q, r);
         }
-        return numbers;
+        return array;
     }
 
     /**
@@ -56,28 +56,28 @@ public class MergeSort {
      * Laufzeit-Analyse auf S. 92 ff., II<br>
      * </br>
      * 
-     * @param numbers = zu sortierendes Array
-     * @param p       = linker Index (Anfang)
-     * @param q       = Mitte wo Array geteilt wird
-     * @param r       = rechter Index (Ende)
+     * @param array = zu sortierendes Array
+     * @param p     = linker Index (Anfang)
+     * @param q     = Mitte wo Array geteilt wird
+     * @param r     = rechter Index (Ende)
      * @return aufsteigend sortiertes Array (mittels rekursiven Aufruf in
      *         mergeSort())
      * 
      * 
      **/
-    public void merge(int[] numbers, int p, int q, int r) {
+    public void merge(int[] array, int p, int q, int r) {
         int n1 = q - p + 1;
         int n2 = r - q;
 
         // Erzeuge TeilArrays L und R
         int[] left = new int[n1 + 1];
         for (int i = 0; i < n1; i++) {
-            left[i] = numbers[p + i];
+            left[i] = array[p + i];
         }
 
         int[] right = new int[n2 + 1];
         for (int j = 0; j < n2; j++) {
-            right[j] = numbers[q + j + 1];
+            right[j] = array[q + j + 1];
         }
 
         left[n1] = Integer.MAX_VALUE; // in case of double: Double.POSITIVE_INFINITY
@@ -88,10 +88,10 @@ public class MergeSort {
 
         for (int k = p; k <= r; k++) {
             if (left[i] <= right[j]) {
-                numbers[k] = left[i];
+                array[k] = left[i];
                 i++;
             } else {
-                numbers[k] = right[j];
+                array[k] = right[j];
                 j++;
             }
         }

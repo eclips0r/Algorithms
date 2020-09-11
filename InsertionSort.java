@@ -1,12 +1,12 @@
 public class InsertionSort {
-    int[] numbers;
+    int[] array;
 
     /**
-     * @param numbers = int[] auf das die gewuenschten Methoden angewendet werden
-     *                sollen
+     * @param array = int[] auf das die gewuenschten Methoden angewendet werden
+     *              sollen
      **/
-    public InsertionSort(int[] numbers) {
-        this.numbers = numbers;
+    public InsertionSort(int[] array) {
+        this.array = array;
     }
 
     /**
@@ -28,25 +28,25 @@ public class InsertionSort {
      * Laufzeit-Analyse auf S. 65, II<br>
      * </br>
      * 
-     * @param numbers = zu sortierendes Array
+     * @param array = zu sortierendes Array
      * @return aufsteigend sortiertes Array
      * 
      * 
      **/
-    public int[] insertionSort(int[] numbers) {
+    public int[] insertionSort(int[] array) {
         int key;
         int i;
 
-        for (int j = 1; j <= numbers.length; j++) {
-            key = numbers[j - 1];
+        for (int j = 1; j <= array.length; j++) {
+            key = array[j - 1];
             i = j - 1;
-            while (i > 0 && numbers[i - 1] > key) {
-                numbers[i] = numbers[i - 1];
+            while (i > 0 && array[i - 1] > key) {
+                array[i] = array[i - 1];
                 i--;
             }
-            numbers[i] = key;
+            array[i] = key;
         }
-        return numbers;
+        return array;
     }
 
 }
