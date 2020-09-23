@@ -14,20 +14,20 @@ public class Algorithmen {
         int[] test = { 8, 15, 3, 14, 7, 6, 121, 3 };
         printArray(numbers);
         HeapSort heap = new HeapSort(numbers);
-        printArray(heap.heapSort(numbers));
+        printArray(heap.sort(numbers));
 
         printArray(numbers);
         QuickSort quick = new QuickSort(numbers);
-        printArray(quick.quicksort(numbers, 0, numbers.length - 1));
+        printArray(quick.sort(numbers, 0, numbers.length - 1));
 
         MinSearch min = new MinSearch(test);
         System.out.println(min.minSearch(test));
 
         MergeSort merge = new MergeSort(numbers);
-        printArray(merge.mergeSort(numbers, 0, numbers.length - 1));
+        printArray(merge.sort(numbers, 0, numbers.length - 1));
 
         InsertionSort ins = new InsertionSort(numbers);
-        printArray(ins.insertionSort(numbers));
+        printArray(ins.sort(numbers));
     }
 
     /** Printet uebergebenes Array in die Konsole **/
