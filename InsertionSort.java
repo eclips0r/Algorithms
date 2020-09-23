@@ -1,4 +1,4 @@
-public class InsertionSort {
+public class InsertionSort implements Sort {
     int[] array;
 
     /**
@@ -33,7 +33,7 @@ public class InsertionSort {
      * 
      * 
      **/
-    public int[] insertionSort(int[] array) {
+    public int[] sort(int[] array) {
         int key;
         int i;
 
@@ -47,6 +47,12 @@ public class InsertionSort {
             array[i] = key;
         }
         return array;
+    }
+
+    @Override
+    public int[] sort(int[] array, int start, int end) {
+        System.out.println("Please use sort-method without start- and endpoint!");
+        return null;
     }
 
 }

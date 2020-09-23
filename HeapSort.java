@@ -1,4 +1,4 @@
-public class HeapSort {
+public class HeapSort implements Sort {
     int[] array;
     int heapSize; // Elemente in Array
 
@@ -14,7 +14,7 @@ public class HeapSort {
      * @param A - zu sortierendes Array
      * @return sortiertes Array in aufsteigender Reihenfolge
      */
-    public int[] heapSort(int[] A) {
+    public int[] sort(int[] A) {
         buildMaxHeap(A);
         for (int i = heapSize; i > 0; i--) {
             int temp = A[0];
@@ -110,5 +110,11 @@ public class HeapSort {
      */
     public int getRight(int i) {
         return (2 * i) + 2;
+    }
+
+    @Override
+    public int[] sort(int[] array, int start, int end) {
+        System.out.println("Please use sort-method without start- and endpoint!");
+        return null;
     }
 }

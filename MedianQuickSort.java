@@ -7,11 +7,11 @@ public class MedianQuickSort extends QuickSort {
         this.array = array;
     }
 
-    public int[] medianQuicksort(int[] A, int p, int r) {
+    public int[] sort(int[] A, int p, int r) {
         if (p < r) {
             int q = medianPartition(A, p, r);
-            medianQuicksort(A, p, q - 1);
-            medianQuicksort(A, q + 1, r);
+            sort(A, p, q - 1);
+            sort(A, q + 1, r);
         }
         return A;
     }

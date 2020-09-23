@@ -1,4 +1,4 @@
-public class MergeSort {
+public class MergeSort implements Sort {
     int[] array;
 
     /**
@@ -22,12 +22,12 @@ public class MergeSort {
      * @param r     = Endpunkt (Index) der Sortierung
      * 
      **/
-    public int[] mergeSort(int[] array, int p, int r) {
+    public int[] sort(int[] array, int p, int r) {
         int q;
         if (p < r) {
             q = (int) Math.floor((p + r) / 2);
-            mergeSort(array, p, q);
-            mergeSort(array, q + 1, r);
+            sort(array, p, q);
+            sort(array, q + 1, r);
             merge(array, p, q, r);
         }
         return array;
@@ -60,8 +60,7 @@ public class MergeSort {
      * @param p     = linker Index (Anfang)
      * @param q     = Mitte wo Array geteilt wird
      * @param r     = rechter Index (Ende)
-     * @return aufsteigend sortiertes Array (mittels rekursiven Aufruf in
-     *         mergeSort())
+     * @return aufsteigend sortiertes Array (mittels rekursiven Aufruf in sort())
      * 
      * 
      **/
@@ -95,5 +94,11 @@ public class MergeSort {
                 j++;
             }
         }
+    }
+
+    @Override
+    public int[] sort(int[] array) {
+        System.out.println("Please use sort-method with start- and endpoint!");
+        return null;
     }
 }

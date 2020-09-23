@@ -1,4 +1,4 @@
-public class QuickSort {
+public class QuickSort implements Sort {
     int[] array;
 
     // wird fuer RandomQuickSort benoetigt
@@ -21,11 +21,11 @@ public class QuickSort {
      * @param p = Anfangspunkt der Sortierung (Index)
      * @param r = Endpunkt der Sortierung (Index)
      **/
-    public int[] quicksort(int[] A, int p, int r) {
+    public int[] sort(int[] A, int p, int r) {
         if (p < r) {
             int q = partition(A, p, r);
-            quicksort(A, p, q - 1);
-            quicksort(A, q + 1, r);
+            sort(A, p, q - 1);
+            sort(A, q + 1, r);
         }
         return A;
     }
@@ -92,5 +92,11 @@ public class QuickSort {
         A[i + 1] = A[r];
         A[r] = temp;
         return i + 1;
+    }
+
+    @Override
+    public int[] sort(int[] array) {
+        System.out.println("Please use sort-method with start- and endpoint!");
+        return null;
     }
 }

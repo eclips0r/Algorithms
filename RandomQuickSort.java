@@ -15,11 +15,11 @@ public class RandomQuickSort extends QuickSort {
      * @param p = Anfangspunkt der Sortierung (Index)
      * @param r = Endpunkt der Sortierung (Index)
      **/
-    public int[] randomizedQuicksort(int[] A, int p, int r) {
+    public int[] sort(int[] A, int p, int r) {
         if (p < r) {
             int q = randomizedPartition(A, p, r);
-            randomizedQuicksort(A, p, q - 1);
-            randomizedQuicksort(A, q + 1, r);
+            sort(A, p, q - 1);
+            sort(A, q + 1, r);
         }
         return A;
     }
